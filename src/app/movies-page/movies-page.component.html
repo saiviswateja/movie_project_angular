@@ -1,0 +1,74 @@
+<!-- <h2>{{ this.movies | json }}</h2> -->
+<!-- {{parentData}} -->
+<style>
+    .search_block{
+    margin-top: 4%;
+    background-color: whitesmoke;
+  }
+  .search_block input{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 200%;
+    width: 70%;
+  }
+  .search_block button{
+    font-size: 200%;
+    background-color: blue;
+    border: 0px;
+    color: cornsilk;
+    border-radius: 3px;
+    padding: 4px;
+  }
+  .search_elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .search_elements span{
+    font-size: 200%;
+    font-weight: 700; 
+  }
+  .search_elements button:hover{
+    background-color: darkgrey;
+    color: blue;
+  }
+
+  @media screen and (max-width: 800px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+    .search_block{
+      padding-top: 20%;
+    }
+    .search_elements{
+      flex-direction: column;
+    }
+    .search_elements input{
+      width: 80%;
+    }
+    .search_elements button{
+      margin-bottom: 6%;
+    }
+  }
+</style>
+
+<div class="search_block">
+  <div class="search_elements">
+    <span>Search Movie</span>
+    <input (change)="onKey($event)" type="text" placeholder="enter movie name to search"/>
+    <button (click)="searchMovie()">Search</button>
+  </div>
+</div>
+<h2 *ngIf="noMovie">
+    <center>There are no movies with searced name</center>
+</h2>
+    <div  class="movie_container">
+        <div *ngFor="let movie of this.movies.Search" (click)="onMovieClicked(movie)" class="movie_card">
+            <img src={{movie.Poster}}/>
+            <h3><center>{{movie.Title}}</center></h3>
+        </div>  
+    </div>
+

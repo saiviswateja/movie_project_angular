@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'movie-project';
+  
+  // public searchBox:String = "";
+
+  // title = 'movie-project';
+
+  // // searchMovie(){
+  // //   console.log(this.searchBox);
+  // // }
+  // onKey(event:any){
+  //   this.searchBox = event.target.value;
+  // }
 }

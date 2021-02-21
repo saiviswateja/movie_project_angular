@@ -1,0 +1,61 @@
+<style>
+    .movie_details_card{
+        background-color: whitesmoke;
+        margin-top: 8%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .image_holder{
+        flex: 1;
+        margin-left: 3%;
+    }
+    .movie_details{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    span{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 900;
+        font-size: 200%;
+    }
+    label{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 600;
+        font-size: 200%;
+    }
+    .text_holder{
+        margin-top: 2%;
+        display: flex;
+        justify-content: space-around;
+    }
+    @media screen and (max-width: 800px) {
+        .movie_details_card{
+            flex-direction: column;
+        }
+        .image_holder{
+            margin-top: 20%;
+        }
+    }
+</style>
+
+<div class="movie_details_card">
+    <div class="image_holder">
+        <img src={{movie.Poster}}/>
+    </div>
+    <div class="movie_details">
+        <div class="text_holder">
+            <label>Title</label>
+            <span>{{movie.Title}}</span>
+        </div>
+        <div class="text_holder">
+            <label>Category</label>
+            <span>{{movie.Type}}</span>
+        </div>
+        <div class="text_holder">
+            <label>Year of release</label>
+            <span>{{movie.Year}}</span>
+        </div>
+    </div>
+</div>
